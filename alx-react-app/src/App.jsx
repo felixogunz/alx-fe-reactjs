@@ -1,22 +1,9 @@
-import WelcomeMessage from './components/WelcomeMessage'; // Correct path
+import WelcomeMessage from './WelcomeMessage
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import WelcomeMessage from './components/WelcomeMessage';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      {/* Other content of your app */}
-      <WelcomeMessage /> {/* Add the WelcomeMessage component here */}
-    </div>
-  );
-}
-
-export default App;
 
 function App() {
   const [count, setCount] = useState(0)
