@@ -6,3 +6,26 @@ export default defineConfig({
   plugins: [react()],
 })
 
+
+
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 5173, // Customize port if needed
+  },
+});
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 5173,
+    open: true, // Automatically open the browser when the server starts
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'], // Pre-bundle common dependencies
+  },
+});
