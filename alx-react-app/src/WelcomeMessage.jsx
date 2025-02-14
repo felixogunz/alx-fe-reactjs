@@ -9,3 +9,5 @@ function WelcomeMessage() {
 }
 
 export default WelcomeMessage;
+
+src/components/WelcomeMessage.jsx
