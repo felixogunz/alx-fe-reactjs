@@ -22,8 +22,8 @@ function App() {
       <WelcomeMessage /> 
       <h1>Vite + React</h1> {/* You can keep or remove this heading */}
       <h1>Hello everyone, I am learning React at ALX!</h1>
-            <p>This is a simple JSX component.</p>
-            <p>I am learning about JSX!</p>
+      <p>This is a simple JSX component.</p>
+      <p>I am learning about JSX!</p>
     </>
   );
 }
