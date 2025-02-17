@@ -1,5 +1,16 @@
-import React from 'react';
+// src/UserContext.js
 
-const UserContext = React.createContext(null); // Initialize with null or a default value
+import React, { createContext } from 'react';
 
-export default UserContext;
+// Create the UserContext
+export const UserContext = createContext();
+
+// Create a provider component that wraps children with UserContext.Provider
+export const UserProvider = ({ children, userData }) => {
+  return (
+    <UserContext.Provider value={userData}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
