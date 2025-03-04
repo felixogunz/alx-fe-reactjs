@@ -1,6 +1,7 @@
 ["/blog/:id"]
 
 // App.jsx
+import ProtectedRoute from './ProtectedRoute';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, Outlet, useParams } from 'react-router-dom';
 
