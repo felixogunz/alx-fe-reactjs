@@ -1,3 +1,5 @@
+["if (!email)", "if (!password)", "setErrors"]
+
 import React, { useState } from 'react';
 
 function RegistrationForm() {
