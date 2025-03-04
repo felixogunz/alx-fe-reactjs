@@ -1,4 +1,5 @@
 // src/App.jsx
+import Profile from './Profile';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import PostsComponent from './PostsComponent';
 
