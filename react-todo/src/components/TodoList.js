@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function TodoList() {
+const TodoList = () => {
   const [todos, setTodos] = useState([
-    { id: 1, text: 'Learn React', completed: false },
-    { id: 2, text: 'Build a Todo App', completed: false },
-    { id: 3, text: 'Write Tests', completed: false },
+    { id: 1, text: "Learn React", completed: false },
+    { id: 2, text: "Write tests", completed: false }
   ]);
-  const [newTodo, setNewTodo] = useState('');
+  const [input, setInput] = useState("");
 
-  const addTodo = (text) => {
-    if (text.trim()) {
-      setTodos([...todos, { id: Date.now(), text: text, completed: false }]);
-      setNewTodo('');
+  const addTodo = () => {
+    if (input.trim()) {
+      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
+      setInput("");
     }
   };
 
@@ -32,27 +31,25 @@ function TodoList() {
       <h1>Todo List</h1>
       <input
         type="text"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Add a new todo"
       />
-      <button onClick={() => addTodo(newTodo)}>Add Todo</button>
+      <button onClick={addTodo}>Add Todo</button>
       <ul>
         {todos.map((todo) => (
           <li
             key={todo.id}
-            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
             onClick={() => toggleTodo(todo.id)}
           >
             {todo.text}
-            <button onClick={(e) => {
-              e.stopPropagation(); // Prevent toggling when deleting
-              deleteTodo(todo.id);
-            }}>Delete</button>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default TodoList;
