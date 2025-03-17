@@ -1,21 +1,43 @@
 [
-    {
-      "id": 1,
-      "title": "Spaghetti Carbonara",
-      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 2,
-      "title": "Chicken Tikka Masala",
-      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 3,
-      "title": "Avocado Toast",
-      "summary": "A simple and healthy breakfast with smashed avocado, salt, and pepper on toasted bread.",
-      "image": "https://via.placeholder.com/150"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper"],
+    "instructions": [
+      "Boil the spaghetti in salted water until al dente.",
+      "Fry the bacon until crispy.",
+      "Whisk eggs and cheese together.",
+      "Mix everything and season with black pepper."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Chicken", "Yogurt", "Spices", "Tomato Sauce", "Cream"],
+    "instructions": [
+      "Marinate the chicken with yogurt and spices.",
+      "Grill the chicken until cooked.",
+      "Prepare the tomato-based sauce.",
+      "Add grilled chicken to the sauce and simmer."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "A simple and healthy breakfast with smashed avocado, salt, and pepper on toasted bread.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Bread", "Avocado", "Salt", "Black Pepper", "Lemon Juice"],
+    "instructions": [
+      "Toast the bread until golden brown.",
+      "Mash the avocado with salt, pepper, and lemon juice.",
+      "Spread the avocado mixture on toast.",
+      "Serve immediately."
+    ]
+  }
+]
+
   
