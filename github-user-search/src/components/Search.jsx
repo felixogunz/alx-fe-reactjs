@@ -1,60 +1,47 @@
 import { useState } from "react";
-import { fetchUserData } from "../services/githubService";
 
-["Looks like we cant find the user"]
-
-const Search = () => {
+const Search = ({ onSearch }) => {
   const [username, setUsername] = useState("");
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [location, setLocation] = useState("");
+  const [repos, setRepos] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
-    setUserData(null);
-
-    try {
-      const data = await fetchUserData(username);
-      if (!data) {
-        throw new Error();
-      }
-      setUserData(data);
-    } catch (err) {
-      setError("Looks like we can't find the user.");
-    } finally {
-      setLoading(false);
-    }
+    onSearch({ username, location, repos });
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4">
-      <form onSubmit={handleSubmit} className="flex gap-2">
+    <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg">
+      <h2 className="text-xl font-bold mb-4">GitHub User Search</h2>
+      <form onSubmit={handleSearch} className="space-y-4">
         <input
           type="text"
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter GitHub username"
-          className="border p-2 w-full rounded"
+          className="w-full p-2 border rounded-lg"
         />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        <input
+          type="text"
+          placeholder="Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className="w-full p-2 border rounded-lg"
+        />
+        <input
+          type="number"
+          placeholder="Min Repositories"
+          value={repos}
+          onChange={(e) => setRepos(e.target.value)}
+          className="w-full p-2 border rounded-lg"
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
+        >
           Search
         </button>
       </form>
-
-      {loading && <p className="mt-4 text-gray-500">Loading...</p>}
-      {error && <p className="mt-4 text-red-500">{error}</p>}
-
-      {userData && (
-        <div className="mt-4 p-4 border rounded">
-          <img src={userData.avatar_url} alt="User Avatar" className="w-20 h-20 rounded-full" />
-          <h2 className="text-xl font-bold">{userData.name || userData.login}</h2>
-          <a href={userData.html_url} className="text-blue-500" target="_blank" rel="noopener noreferrer">
-            View Profile
-          </a>
-        </div>
-      )}
     </div>
   );
 };
