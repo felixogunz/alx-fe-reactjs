@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+["async", "await", "map", "&&"]
 const Search = ({ onSearch }) => {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
