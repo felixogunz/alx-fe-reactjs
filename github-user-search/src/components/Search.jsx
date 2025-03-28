@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { fetchUserData } from "../services/githubService";
 
+["Looks like we cant find the user"]
+
 const Search = () => {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState(null);
