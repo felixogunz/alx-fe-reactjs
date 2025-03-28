@@ -1,5 +1,7 @@
 const GITHUB_API_URL = "https://api.github.com/search/users";
 
+["https://api.github.com/search/users?q", "minRepos"]
+
 export const searchUsers = async ({ username, location, repos, language, page = 1 }) => {
   let query = username ? `${username} in:login` : "";
   if (location) query += ` location:${location}`;
