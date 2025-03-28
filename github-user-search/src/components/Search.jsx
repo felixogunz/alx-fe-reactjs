@@ -4,10 +4,11 @@ const Search = ({ onSearch }) => {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
   const [repos, setRepos] = useState("");
+  const [language, setLanguage] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch({ username, location, repos });
+    onSearch({ username, location, repos, language });
   };
 
   return (
@@ -33,6 +34,13 @@ const Search = ({ onSearch }) => {
           placeholder="Min Repositories"
           value={repos}
           onChange={(e) => setRepos(e.target.value)}
+          className="w-full p-2 border rounded-lg"
+        />
+        <input
+          type="text"
+          placeholder="Preferred Language"
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
           className="w-full p-2 border rounded-lg"
         />
         <button
