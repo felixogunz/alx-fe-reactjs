@@ -1,15 +1,19 @@
 import { useState } from "react";
 
-["async", "await", "map", "&&"] ["html_url"]
-const Search = ({ onSearch }) => {
+["async", "await", "map", "&&"] ["html_url"] ["fetchUserData"]
+
+const Search = ({ onSearch, fetchUserData }) => {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
   const [repos, setRepos] = useState("");
   const [language, setLanguage] = useState("");
+  const [users, setUsers] = useState([]);
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    onSearch({ username, location, repos, language });
+    const data = await fetchUserData({ username, location, repos, language });
+    setUsers(data);
+    onSearch(data);
   };
 
   return (
@@ -51,6 +55,15 @@ const Search = ({ onSearch }) => {
           Search
         </button>
       </form>
+      <div className="mt-4">
+        {users.map((user) => (
+          <div key={user.id} className="p-2 border rounded-lg mb-2">
+            <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+              {user.login}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
