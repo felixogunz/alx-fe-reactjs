@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-["async", "await", "map", "&&"] ["html_url"] ["fetchUserData"]
+/*["async", "await", "map", "&&"] ["html_url"] ["fetchUserData"]*/
 
 const Search = ({ onSearch, fetchUserData }) => {
   const [username, setUsername] = useState("");
